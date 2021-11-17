@@ -1,10 +1,6 @@
 const https = require('https');
 
 module.exports = function isJonSchlinkert(pkg) {
-  let options = {
-    host: 'registry.npmjs.org',
-    path: '/' + pkg,
-  }
   return new Promise((resolve, reject) => {
     let buf = '';
     https.get("https://registry.npmjs.org/" + pkg, (response) => {
